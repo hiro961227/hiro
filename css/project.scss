@@ -1,0 +1,784 @@
+@import url('common.css');
+
+main{
+    width:90%;
+    margin:0 auto;
+    overflow: hidden;
+    z-index:0;
+    .backbtn{
+        width:100%; height: 10%;
+        transition:.8s;
+         display:none;
+        opacity: 0;
+        position: absolute;
+        left:92%; top:20%;
+        span{
+            color:#434a4b;
+            font-size:1.2em;
+            cursor: pointer;
+        }
+        span:hover{
+            font-weight: blod;
+            color:#598488;
+        }
+    }
+    .titleprject2{        
+        h1{
+            label {
+              margin: -15px;
+              font-family: 'Anton', sans-serif;
+              display: inline-block;
+              opacity: 0;
+            }
+            padding-left:1%;
+            width:100%;
+            text-align: left;
+            font-family: 'Anton', sans-serif;
+            font-size:8.6em;            
+            padding-top:2%;
+            
+            @keyframes labelAni{
+                0%{
+                    opacity: 0;
+                    transform: trnaslateX(100%);
+                }
+                100%{
+                    opacity: 1;
+                    transform: trnaslateX(0%);
+                }
+            }
+        }
+    }
+    .pagebtn{
+        display:block;
+        opacity: 0;
+        transition:1.3s;
+        width:90%; margin:0 auto;
+        display:block;
+        position: absolute;
+        left:83%; top:22%;
+    button{
+            width:200px; height:50px;
+            border:none;
+            background: #434a4b;
+            margin:2%;
+            position: relative;
+            overflow: hidden;
+            font-size:1.1em;
+            a{color:#fff; z-index:100; position: relative;}
+            a:hover{
+                position: relative;
+                color:#fff;
+                 z-index:100;
+            }
+        }
+    button::before{
+            content:'';
+            position: absolute;
+            top:50%; left:50%;
+            width:150px; height:150px;
+            border-radius: 80%;
+            transform: translate3d(-50%,-50%,0) scale3d(0,0,0);
+            transition: opacity .4s cubic-bezier(.19,1,.22,1),transform .75s cubic-bezier(.19,1,.22,1);
+            background:#598488;
+            opacity: 0;                
+        }
+    button:hover::before {
+            opacity: 1;
+            transition-duration: .8s;
+            transform: translate3d(-50%,-50%,0) scale3d(1.5,1.5,1.5);
+        }
+    }
+    .projectlist{
+        width:100%;
+        margin:0 auto;
+        display: flex;
+        justify-content: space-between;
+
+        li{
+            width:39%; height:40%;
+            display: inline-block;
+            padding-right:3%;
+            h5{
+                width:100%;
+                padding:2% 0;
+                font-size:1.1em;
+                text-align: right;
+                color:#598488;
+            }
+            .logoimg{
+                width:100%;
+                -webkit-filter: grayscale(100%);
+                filter: gray;
+                img{
+                    width:100%;
+                }
+            }
+            .logoimg:hover{-webkit-filter: grayscale(0%);}
+            .smalllist{
+                width:100%;
+                h2{
+                    padding:4% 0 2% 0;
+                    font-size:2em;
+                    color:#598488;
+                    font-weight:900;
+                }
+                p{
+                    font-size:1.2em;
+                    white-space: pre-line;
+                    line-height:1.5;
+                }
+            }
+
+            opacity: 0;
+            transition: 0.8s;
+            //animation:slideup .6s .5s forwards ease-in-out;
+            @keyframes slideup {
+                0%{
+                    opacity: 0;
+                    transform: translate(0,100%);
+                }
+                100%{
+                    opacity: 1;
+                    transform: translate(0,0);
+                }
+            }
+        }
+    }
+}
+
+
+.projectmain{
+    display:none;
+    width:100%;
+    margin:0 auto;
+    overflow: hidden;
+    background:url('../img/background.jpg');
+    position: absolute;
+    left:0; top:100%;
+    transition: .7s;
+    
+    .titleprject{
+        width:90%;
+        margin:0 auto;
+        h1{
+            label {
+              margin: -15px;
+              font-family: 'Anton', sans-serif;
+              display: inline-block;
+            }
+            padding-left:1%;
+            width:100%;
+            text-align: left;
+            font-family: 'Anton', sans-serif;
+            font-size:8.6em; 
+        }
+    }
+    
+    .openpage{
+        width:100%; height:100%;
+        position: relative;
+        
+        .page1{
+            width:100%; height: 30vh;
+            .backpage1{
+                width:100%; height: 100vh;
+                z-index:1;
+                position: relative;
+                .bgimg{
+                    width:100%; height:90vh;
+                    background-size:100%;
+                    -webkit-filter: grayscale(100%);
+                    filter: gray;
+                }
+                .bgimg:hover{-webkit-filter: grayscale(0%);}
+                .stroymain{
+                    width:100%;
+                    padding:3% 0 2% 0;
+                    background:url('../img/background.jpg');
+                    .storyone{
+                        width:90%;
+                        margin:0 auto;
+                        h1{
+                            display:inline-block;
+                            font-size:3em;
+                            font-weight:900;
+                            color:#598488;
+                        }
+                        p{
+                            font-size:1.3em;
+                            white-space: pre-line;
+                            line-height: 1.8;
+                        }
+                    }
+                    .storytwo{
+                        width:90%;
+                        margin:0 auto;
+                        padding:2.5% 0;
+                        h3{
+                            font-size:1.8em;
+                            font-weight:900;
+                            padding-bottom:1%;
+                        }
+                        p{
+                            font-size:1.3em;
+                            white-space: pre-line;
+                            line-height: 1.8;
+                        }
+                    }
+                }
+                .etcline{
+                    width:90%;
+                    margin:0 auto;
+                    overflow: hidden;
+                    padding:5% 0;
+                    .language{
+                        width:30%;
+                        float: left;
+                        padding-left: 5%;
+                        h3{
+                            font-size:1.8em;
+                            font-weight:900;
+                            padding-bottom:3%;
+                            text-align: center;
+                        }
+                        .languageimg{
+                            width:50%;
+                            display:block;
+                            margin:0 auto;
+                            text-align: center;
+                            img{
+                                width:25%;
+                                padding:5% 10%;
+                            }
+                        }
+                    }
+                    .etcright{
+                        width:56%;
+                        float: right;
+                        .etcup{
+                            width:90%;
+                            overflow: hidden;
+                            padding-bottom:3%;
+                            .day{
+                                width:55%;
+                                float: left;
+                                h3{
+                                    font-size:1.8em;
+                                    font-weight:900;
+                                    padding-bottom:3%;
+                                }
+                                p{
+                                    font-size:1.3em;
+                                    white-space: pre-line;
+                                    line-height: 1.8;
+                                }
+                            }
+                            .mode{
+                                width:45%;
+                                float:right;
+                                h3{
+                                    font-size:1.8em;
+                                    font-weight:900;
+                                    padding-bottom:3%;
+                                }
+                                p{
+                                    font-size:1.3em;
+                                    white-space: pre-line;
+                                    line-height: 1.8;
+                                }
+                            }
+                        }
+                        .etcdown{
+                            width:90%;
+                            overflow: hidden;
+                            .web{
+                                width:55%;
+                                float: left;
+                                h3{
+                                    font-size:1.8em;
+                                    font-weight:900;
+                                    padding-bottom:3%;
+                                }
+                                p{
+                                    font-size:1.3em;
+                                    white-space: pre-line;
+                                    line-height: 1.8;
+                                }
+                            }
+                            .share{
+                                width:45%;
+                                float: right;
+                                h3{
+                                    font-size:1.8em;
+                                    font-weight:900;
+                                    padding-bottom:3%;
+                                }
+                                p{
+                                    font-size:1.3em;
+                                    white-space: pre-line;
+                                    line-height: 1.8;
+                                }
+                            }
+                        }
+                        
+                    }            
+                }
+            }
+        }
+        .page2{
+            width:100%; 
+            margin:0 auto;
+            padding-top:60%;
+            background:url('../img/background.jpg');
+
+            .backpage2{
+                width:100%; height: 100vh;
+                .bgimg{
+                    width:100%; height:120vh;
+                    -webkit-filter: grayscale(100%);
+                    filter: gray;
+                }
+                .bgimg:hover{-webkit-filter: grayscale(0%);}
+            }
+            .sitepage{
+                width:90%; 
+                margin:0 auto;
+                padding-top:18%;
+                h3{
+                    font-size:1.8em;
+                    font-weight:900;
+                    padding-bottom:2%;
+                    text-align: center;
+                }
+                .btn{
+                    width:100%;
+                    margin: 0 auto;
+                    text-align: center;
+                    button{
+                        width:220px; height:50px;
+                        border:none;
+                        background: #434a4b;
+                        margin:2%;
+                        position: relative;
+                        overflow: hidden;
+                        font-size:1.1em;
+                        a{color:#fff; z-index:100; position: relative;}
+                        a:hover{
+                            position: relative;
+                            color:#fff;
+                            z-index:100;
+                        }
+                    }
+                    button::before{
+                        content:'';
+                        position: absolute;
+                        top:50%; left:50%;
+                        width:150px; height:150px;
+                        border-radius: 80%;
+                        transform: translate3d(-50%,-50%,0) scale3d(0,0,0);
+                        transition: opacity .4s cubic-bezier(.19,1,.22,1),transform .75s cubic-bezier(.19,1,.22,1);
+                        background:#598488;
+                        opacity: 0;                
+                    }
+                    button:hover::before {
+                        opacity: 1;
+                        transition-duration: .8s;
+                        transform: translate3d(-50%,-50%,0) scale3d(1.5,1.5,1.5);
+                    }
+                }
+            }
+            
+            .pagenum{
+                width: 50%;
+                margin:0 auto;
+                padding:8% 0 3% 0;
+                text-align: center;
+                a{
+                    color:#434a4b;
+                    display:inline-block;
+                    padding:2%;
+                    font-size:1.3em;
+                }
+                .on{
+                    font-weight: 900;
+                    color:#598488;
+                }
+                a:hover{
+                    position: relative;
+                    color:#598488;
+                    z-index:100;
+                }
+            }
+        }
+    }
+}
+.active{
+    position: absolute;
+    left:0; top:33%;
+}
+.backdeco{
+    width:100%; height:100%;
+    position: absolute;
+    left:0%; top:0%;
+    overflow: hidden;
+    z-index:-50;
+    .kelloggsimg1{
+        width:200px;
+        position: absolute;
+        left:90%; top:80%;
+        transform: translate(0%,0%) rotate(-15deg);
+    }
+    .kelloggsimg2{
+        width:100px;
+        position: absolute;
+        left:96%; top:74%;
+        transform: trnaslate(-96%,-74%) rotate(-45deg);
+        animation: moving1 1.4s infinite ease-in-out;
+        @keyframes moving1 {
+            0%{transform: translate(0,0) rotate(-45deg);}
+            50%{transform: translate(0,-5%) rotate(-45deg);}
+            100%{transform: translate(0,0) rotate(-45deg);}
+        }
+    }
+    .kelloggsimg3{
+        width:150px;
+        position: absolute;
+        left:85%; top:90%;
+        transform: trnaslate(-85%,-90%) rotate(-15deg);
+        animation: moving 1.4s infinite ease-in-out;
+        @keyframes moving {
+            0%{transform: translate(0,0) rotate(-15deg);}
+            50%{transform: translate(0,-5%) rotate(-15deg);}
+            100%{transform: translate(0,0) rotate(-15deg);}
+        }
+    }
+    .momunimg1{
+        width:200px;
+        position: absolute;
+        left:1%; top:28%;
+        transform: trnaslate(-1%,-28%)  rotate(35deg);
+        
+    }
+    .momunimg2{
+        width:150px;
+        position: absolute;
+        left:7%; top:25%;
+        transform: translate(-7%,-25%);
+        animation: moving 1.4s infinite ease-in-out;
+        @keyframes moving {
+            0%{transform: translate(0,0);}
+            50%{transform: translate(0,-5%);}
+            100%{transform: translate(0,0);}
+        }
+    }
+    .momunimg3{
+        width:100px;
+        position: absolute;
+        left:0%; top:38%;
+        transform: translate(0,-38%);
+        animation: moving 1.4s infinite ease-in-out;
+        @keyframes moving {
+            0%{transform: translate(0,0);}
+            50%{transform: translate(0,-5%);}
+            100%{transform: translate(0,0);}
+        }
+    }
+
+    opacity: 0;
+    animation: fadein 1.4s .5s forwards ease-in-out;
+    @keyframes fadein {
+        0%{opacity: 0;}
+        100%{opacity: 1;}        
+    }
+}
+
+
+@media (min-width:1026px) and (max-width:1560px){
+    .active{
+        position: absolute;
+        left:0; top:32%;
+    }
+    main{
+        font-size:1.2em;
+        .backbtn{
+            left:63%; top:-2%;
+            span{width:12px; height:12px;}
+        }
+        .pagebtn{
+            left:85%; top:23%;
+            button{
+                width:120px; height:40px;
+                font-size:.9em;
+            }
+        }
+        .titleprject2{
+            h1{
+                padding-top:0;
+                margin-top:-2%;
+                label{font-size:.6em;}
+            }
+        }
+        .projectlist{
+            margin-top:-3%;
+            li{
+                .smalllist{
+                    h1{font-size:.9em;}
+                    p{font-size:1em;}
+                }
+            }
+        }
+    }
+    
+    .projectmain{
+        .openpage{
+            .page1{
+                .backpage1{
+                    .backimg{}
+                }
+            }
+        }
+    }
+}
+@media (min-width:865px) and (max-width:1025px){
+    main{
+        width:95%; margin:0 auto;
+        padding-top:20%;
+        .backbtn{
+            position: absolute;
+            left:100%; top:0%;
+            transform: translate(-8%, -200%);
+        }
+        .pagebtn{
+            position: absolute;
+            left:90%; top:0%;
+            transform: translate(-2%,19%);
+        }
+        h1{
+            display:block;
+            width:100%;
+            margin-top:-20%;
+            label{font-size:.8em;}
+            label:nth-of-type(1){margin-left:0; }
+        }
+        .projectlist{
+            width:95%;
+            margin:0 auto;
+            display:block;
+            li{
+                width:100%; margin: 0 auto;
+            }
+            li:nth-of-type(2n){padding-right: 0;}
+        }
+        .backbtn{
+            width:100%;
+            z-index:55;
+            display:block;
+            position: absolute;
+            left:55%; top:25%;
+        }
+        .pagebtn{
+            width:100%; height:100%;
+            display:block;
+            position: absolute;
+            left:75%; top:0%;
+        }
+    }
+    .active{
+        position: absolute;
+        left:0; top:25%;
+    }
+    .projectmain{
+        width:100%;
+        .openpage{width:100%; 
+            .page1{
+                width:100%;
+                .backimg{
+                    .bgimg{
+                        height:45vh;    
+                    }
+                }
+                .stroymain{
+                    width:100%;
+                    z-index:50;
+                }
+            }
+            .page2{
+                .backpage2{height:90vh;
+                    .backimg{
+                    }
+                }
+                .sitepage{    
+                    padding:5% 0;                
+                    height:40vh;
+                }
+            }
+        }
+    }
+
+    .backdeco{
+    width:100%; height:150%;
+    position: absolute;
+    left:0%; top:0%;
+    z-index:-50;
+        .kelloggsimg1{
+            width:200px;
+            position: absolute;
+            left:80%; top:80%;
+            transform: translate(0%,0%) rotate(-15deg);
+        }
+        .kelloggsimg2{
+            width:100px;
+            position: absolute;
+            left:91%; top:74%;
+            transform: trnaslate(-96%,-74%) rotate(-45deg);
+            
+        }
+        .kelloggsimg3{
+            width:150px;
+            position: absolute;
+            left:70%; top:90%;
+            transform: trnaslate(-85%,-90%) rotate(-15deg);
+            
+        }
+        .momunimg1{
+            width:200px;
+            position: absolute;
+            left:31%; top:18%;
+            transform: trnaslate(-1%,-28%)  rotate(35deg);
+            
+        }
+        .momunimg2{
+            width:150px;
+            position: absolute;
+            left:42%; top:14%;
+            transform: translate(-7%,-25%);
+            animation: moving 1.4s infinite ease-in-out;
+            
+        }
+        .momunimg3{
+            width:100px;
+            position: absolute;
+            left:27%; top:25%;
+            transform: translate(0,-38%);
+            
+        }
+    }
+}
+@media all and (max-width:864px){
+    main{
+        width:100%; height: 100%;
+        .pagebtn{
+            position: absolute;
+            left:80%; top:27%;
+            button{
+                width:80px; height:20px; font-size:.6em
+            }
+        }
+        .titleprject2{
+            width:95%; margin:0 auto;
+            h1{
+                display:block;
+                label{font-size:46px;}
+                label:nth-of-type(1){margin-left:0;}
+            }
+        }
+        .projectlist{
+            width:100%;
+            display:block;
+            padding-bottom:5%;
+            
+            li{
+                font-size:.6em;
+                width:100%;
+            }
+        }
+    }
+    .active{
+        position: absolute;
+        left:0; top:32%;
+    }
+    .projectmain{
+        width:100%;
+        font-size:.4em;
+        .openpage{width:100%; 
+            .page1{
+                width:100%;
+                .backimg{
+                    .bgimg{
+                        height:45vh;    
+                    }
+                }
+                .stroymain{
+                    width:100%;
+                    z-index:50;
+                }
+                .etcline{width:90%; margin:0 auto; font-size:.9em;}
+            }
+            .page2{
+                .backpage2{
+                    height: 50vh;
+                    .backimg{
+                        .bgimg{height:60vh;}
+                    }
+                }
+                .sitepage{    
+                    padding:20% 0 0 0; 
+                    .btn{
+                        button{
+                            width:100px; height:30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .backdeco{
+        width:100%; height:150%;
+        position: absolute;
+        left:0%; top:0%;
+        z-index:-50;
+            .kelloggsimg1{
+                width:200px;
+                position: absolute;
+                left:55%; top:80%;
+                transform: translate(0%,0%) rotate(-15deg);
+            }
+            .kelloggsimg2{
+                width:100px;
+                position: absolute;
+                left:73%; top:75%;
+                transform: trnaslate(-73%,-75%) rotate(-45deg);
+                
+            }
+            .kelloggsimg3{
+                width:150px;
+                position: absolute;
+                left:25%; top:82%;
+                transform: trnaslate(-25%,-82%) rotate(-15deg);
+                
+            }
+            .momunimg1{
+                width:150px;
+                position: absolute;
+                left:36%; top:16%;
+                transform: trnaslate(-36%,-16%)  rotate(35deg);
+                
+            }
+            .momunimg2{
+                width:150px;
+                position: absolute;
+                left:57%; top:12%;
+                transform: translate(-57%,-12%);
+                animation: moving 1.4s infinite ease-in-out;
+                
+            }
+            .momunimg3{
+                width:100px;
+                position: absolute;
+                left:27%; top:22%;
+                transform: translate(0,-22%);
+                
+            }
+        }
+}
